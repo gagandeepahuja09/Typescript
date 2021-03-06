@@ -15,12 +15,20 @@ axios.get(url).then(response => {
   // does not exist on type Todo
   const todo = response.data as Todo
 
-  const { ID, Title, finished } = todo
-
-  console.log(`
-    The todo with ID : ${ID}
-    Has a title of : ${Title}
-    Is it finished? ${finished}
-  `)
+  const { id, title, completed } = todo
+  
+  // here while calling the function, we messed up the order.
+  // so, in order to solve that, we will add type annotations to the function
+  // it will tell, what variable types are we expecting 
+  // argument to type boolean is not assignable to argument of type string
+  logTodo(id, completed, title)
 })
+
+const logTodo = (id: number, title: string, completed: boolean) => {
+  console.log(`
+    The todo with id : ${id}
+    Has a title of : ${title}
+    Is it completed? ${completed}
+  `)
+}
 

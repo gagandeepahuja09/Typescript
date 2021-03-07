@@ -1,14 +1,16 @@
-const oldCivic = {
-  name: 'Civic',
-  year: 2000,
-  broken: true
-}
-
-const printVehicle = (vehicle: {
+interface Vehicle {
   name: string
   year: number
   broken: boolean
-}): void => {
+}
+
+const oldCivic = {
+  name: 'Civic',
+  year: 2000,
+  broken: true,
+}
+
+const printVehicle = (vehicle: Vehicle): void => {
   const { name, year, broken } = vehicle
   console.log(`Name: ${name}
     Year: ${year}

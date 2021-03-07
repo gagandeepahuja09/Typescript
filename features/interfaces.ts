@@ -1,24 +1,41 @@
-interface Vehicle {
-  name: string
-  year: number
-  broken: boolean
+// We can assign any value that we want in an interface. We are not limited
+// to primitive types. We can assign Objects / Dates / Functions, etc
+interface Reportable {
+  summary(): string
+  // needs to have a function which returns summary in string format
 }
 
 const oldCivic = {
   name: 'Civic',
-  year: 2000,
+  year: new Date(),
   broken: true,
+  summary(): string {
+    return `Name: ${this.name}
+    Year: ${this.year}
+    Broken? ${this.broken}`
+  }
 }
 
-const printVehicle = (vehicle: Vehicle): void => {
-  const { name, year, broken } = vehicle
-  console.log(`Name: ${name}
-    Year: ${year}
-    Broken? ${broken} 
-  `)
+const myDrink = {
+  color: 'brown',
+  carbonated: true,
+  sugar: 40,
+  summary(): string {
+    return `My drink has ${this.sugar} grams of sugar`
+  }
 }
 
-printVehicle(oldCivic)
+// myDrink and oldCivic are very different things but both have a type summary
+// hence are of type reportable
+// We can use a single interface to describe the shape of very different objects
+// So, we made a very generic looking interface with a very generic name print summary
+
+const printSummary = (vehicle: Reportable): void => {
+  console.log(vehicle.summary())
+}
+
+printSummary(oldCivic)
+printSummary(myDrink)
 
 // problems with this: 
 // 1. the annotation is really long

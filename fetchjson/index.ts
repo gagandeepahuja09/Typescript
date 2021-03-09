@@ -21,7 +21,7 @@ axios.get(url).then(response => {
   // so, in order to solve that, we will add type annotations to the function
   // it will tell, what variable types are we expecting 
   // argument to type boolean is not assignable to argument of type string
-  logTodo(id, completed, title)
+  logTodo(id, title, completed)
 })
 
 const logTodo = (id: number, title: string, completed: boolean) => {

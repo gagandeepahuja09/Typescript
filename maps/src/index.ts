@@ -1,14 +1,12 @@
 // import { Company } from './Company'
 // import { User } from './Users'
-console.log('fsfs', document.getElementById('map'))
+import { CustomMap } from './CustomMap'
 
-new google.maps.Map(document.getElementById('map'), {
-  zoom: 1,
-  center: {
-    lat: 0,
-    lng: 0
-  }
-})
+new CustomMap('map')
+
+// there are many functions exposing which to other developers might break our application
+// for that we will create a helper class / custom class in which we will only expose very
+// limited functions like addMarker. This will significa
 // google
 // CMD SHIFT P ==> Fold Level 2
 // cmd shift click to view the 

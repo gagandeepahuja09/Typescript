@@ -3,7 +3,8 @@ interface Mappable {
   location: {
     lat: number,
     lng: number
-  }
+  },
+  markerContent(): string
 }
 
 export class CustomMap {
@@ -43,9 +44,11 @@ export class CustomMap {
   // It's better that all other classes depend on the customMap class.
   // That is satisfy all constraints of mappable interface
 
-  // Solution, create an interface Mappable, that is a gatekeeper to the addMarker function
+  // Option 3: Best Solution => create an interface Mappable, that is a gatekeeper to the addMarker function
   // All classes like User, Company must satisfy interface 'Mappable' to work with
   // CustomMap's addMarker function
+  // If we have a new requirement tomorrow, we can just update the interface and expect all different classes to 
+  // follow that rule.
   addMarker(mappable: Mappable): void {
     const { lat, lng } = mappable.location
     // it will show an error if we try to access any other property in user.location 
@@ -58,7 +61,7 @@ export class CustomMap {
     })
     marker.addListener('click', () => {
       const infowindow = new google.maps.InfoWindow({
-        content: 'Hi there'
+        content: mappable.markerContent()
       })
       infowindow.open(this.googleMap, marker)
     })

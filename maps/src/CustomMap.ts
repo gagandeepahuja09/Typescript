@@ -1,10 +1,17 @@
 // instructions to every other class on how they can be an argument to addMarker
-interface Mappable {
+export interface Mappable {
   location: {
     lat: number,
     lng: number
   },
-  markerContent(): string
+  markerContent(): string,
+  // as soon as we add this, we will see 2 errors pop up in index.ts
+  // because this property is not there in both User and Company class
+  // this is fine but it would have been better had we seen this error in 
+  // both the classes 2, as the change would be required in these classes 
+  // only
+  // For this we will use the implements clause
+  color: string
 }
 
 export class CustomMap {

@@ -49,12 +49,18 @@ export class CustomMap {
   addMarker(mappable: Mappable): void {
     const { lat, lng } = mappable.location
     // it will show an error if we try to access any other property in user.location 
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat,
         lng
       }
+    })
+    marker.addListener('click', () => {
+      const infowindow = new google.maps.InfoWindow({
+        content: 'Hi there'
+      })
+      infowindow.open(this.googleMap, marker)
     })
   }
 }

@@ -10,3 +10,24 @@
 // we will use 2 packages: Nodemon and Concurrently
 
 // Change the start script in package.json
+
+// #79 2 Huge Issues
+// We have to use this for both purposes, strings and numbers.
+// 1. Issue with strings is that they are immutable ==> Hence swapping directly won't work
+// 2. Checking only ascii values won't work ==> Hence comparison logic would be different.
+
+// #80
+// If we assign collection: number[] | string
+// this type, then we would need be able to use the assignment operator
+// for numbers also as with this type only functions and properties 
+// common to both the types would be accessible.
+
+// # 81 Solution to above problem: Using typeguards
+// we can type guard, like if the collection is an instance of Array in JS
+// , then only do that particular logic
+// typeof ==> Array is also of type object
+
+// Note: Rule for using typeguard in TS
+// typeof to be used only with primitive types: string, number, boolean, symbol, etc.
+// instanceof to be used with all other type: Arrays, Objects, Functions or any
+// other type that we have created.

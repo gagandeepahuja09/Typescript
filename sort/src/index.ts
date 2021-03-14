@@ -1,29 +1,7 @@
-class Sorter {
-  // note that this is shorthand for declaring separately and then
-  // initializing using this keyword
-  constructor(public collection: number[] | string) {
-  }
-  sort(): void {
-    const { length } = this.collection
-    // Typescript is really smart, if can understand that this is only
-    // for array types
-    if (this.collection instanceof Array) {
-      for (let i = 0; i < length; i++) {
-        for (let j = 0; j < length - i - 1; j++) {
-          if (this.collection[j] > this.collection[j + 1]) {
-            const leftHand = this.collection[j]
-            this.collection[j] = this.collection[j + 1]
-            this.collection[j + 1] = leftHand
-          }
-        }
-      }
-    }
-    if (typeof(this.collection) === 'string') {
-      
-    }
-  }
-}
+import { Sorter } from './Sorter'
+import { NumbersCollection } from './NumbersCollection'
 
-const sorter = new Sorter([ 1, 9, -5, 0])
+const numbers = new NumbersCollection([ 10, 21, 0, -4, -8])
+const sorter = new Sorter(numbers)
 sorter.sort()
-console.log(sorter.collection)
+console.log(numbers.data)

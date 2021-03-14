@@ -31,3 +31,15 @@
 // typeof to be used only with primitive types: string, number, boolean, symbol, etc.
 // instanceof to be used with all other type: Arrays, Objects, Functions or any
 // other type that we have created.
+
+
+
+// #82 Why is this bad?
+// If we have 50 different types tomorrow, for each of them we would need 
+// to update our code and make changes to implement for that
+// + 50 different if conditions for sort
+
+// #83 Solution: Extracting Key Logic
+// We are going to use proper inheritance, interfaces and what not
+// We will have a proper Sorter class, whose job is only to sort
+// It's subparts like compare and swap would be handled by the derived / subclasses.

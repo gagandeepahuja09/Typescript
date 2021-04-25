@@ -1,4 +1,6 @@
 "use strict";
+// Interface to tell other classes for how to be eligible for sorting
+// The class should have the following properties: length, compare and swap methods
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Sorter = void 0;
 var Sorter = /** @class */ (function () {

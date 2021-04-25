@@ -38,8 +38,15 @@
 // If we have 50 different types tomorrow, for each of them we would need 
 // to update our code and make changes to implement for that
 // + 50 different if conditions for sort
+// Very poor code, just like in my current org.
 
 // #83 Solution: Extracting Key Logic
 // We are going to use proper inheritance, interfaces and what not
 // We will have a proper Sorter class, whose job is only to sort
 // It's subparts like compare and swap would be handled by the derived / subclasses.
+
+// #88 If some engineer is said to implement a sort implementation for a new type
+// he doesn't have to redo stuff. Only needs to implement compare and swap method.
+
+// Interfaces are not useful because we can describe a type. They are useful because
+// we can set up a contract between one class & another class

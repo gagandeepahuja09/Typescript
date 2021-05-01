@@ -63,3 +63,10 @@
 // 4. The implemented methods can refer to other methods that don't actually exist yet.
 // 5. We still have to provide names & types for the un-implemented methods.
 // 6. Can make child class promise to implement some other method.
+
+
+// Abstract Classes V/s Interfaces
+// Both set up contract b/w classes
+// Interface ==> Loosely coupled way. When we have very different objects that we
+// want to work together.
+// Abstract Classes / Inheritance ==> Strongly couples classes together. eg. now numbers collection can't exist without sorter class.

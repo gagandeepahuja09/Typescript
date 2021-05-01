@@ -50,3 +50,16 @@
 
 // Interfaces are not useful because we can describe a type. They are useful because
 // we can set up a contract between one class & another class
+
+// Rather than calling sorter.sort, all these classes should inherit
+// the sort function.
+
+// This will change by converting Sorter class into an abstract one
+
+// Abstract Classes
+// 1. Can't be used to create an object directly.
+// 2. Only used as a parent class.
+// 3. Can contain real implementation of some methods.
+// 4. The implemented methods can refer to other methods that don't actually exist yet.
+// 5. We still have to provide names & types for the un-implemented methods.
+// 6. Can make child class promise to implement some other method.

@@ -3,8 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// we will need to install type definition file for standard node packages as well
-// npm i @types/node
 var fs_1 = __importDefault(require("fs"));
 var matches = fs_1.default
     .readFileSync('football.csv', {
@@ -12,4 +10,9 @@ var matches = fs_1.default
 })
     .split('\n')
     .map(function (row) { return row.split(','); });
-console.log('Hi there', matches);
+var manUnitedWins = 0;
+matches.forEach(function (match) {
+    manUnitedWins += +((match[1] === 'Man United' && match[5] === 'H')
+        || (match[2] === 'Man United' && match[5] === 'A'));
+});
+console.log("Man united won " + manUnitedWins + " games");

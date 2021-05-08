@@ -1,5 +1,6 @@
 // we will need to install type definition file for standard node packages as well
 // npm i @types/node
+import { match } from 'assert/strict'
 import fs from 'fs'
 
 const matches = fs
@@ -9,4 +10,13 @@ const matches = fs
   .split('\n')
   .map((row: string): string[] => row.split(','))
 
-console.log('Hi there', matches)
+let manUnitedWins = 0
+
+matches.forEach(match => {
+  manUnitedWins += +(
+    (match[1] === 'Man United' && match[5] === 'H')
+    || (match[2] === 'Man United' && match[5] === 'A')
+  )
+})
+
+console.log(`Man united won ${manUnitedWins} games`)

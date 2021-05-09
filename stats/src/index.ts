@@ -1,21 +1,28 @@
 // we will need to install type definition file for standard node packages as well
 // npm i @types/node
-import { match } from 'assert/strict'
 import fs from 'fs'
+import { CsvFileReader } from './CsvFileReader'
 
-const matches = fs
-  .readFileSync('football.csv', {
-    encoding: 'utf-8'
-  })
-  .split('\n')
-  .map((row: string): string[] => row.split(','))
+const reader = new CsvFileReader('football.csv')
+reader.read()
 
 let manUnitedWins = 0
 
-matches.forEach(match => {
+// we could also use object, but they are not meant for that purpose
+// they are meant for storing records. + enums can be used as a type in typescript
+// we can return a MatchResult & use in TS
+// behind the scenes, an object is created
+// Primary goal is to signal other engineers that these are all closely related values
+enum MatchResult {
+  HomeWin = 'H',
+  AwayWin = 'A',
+  Draw = 'D'
+}
+
+reader.data.forEach(match => {
   manUnitedWins += +(
-    (match[1] === 'Man United' && match[5] === 'H')
-    || (match[2] === 'Man United' && match[5] === 'A')
+    (match[1] === 'Man United' && match[5] === MatchResult.HomeWin)
+    || (match[2] === 'Man United' && match[5] === MatchResult.AwayWin)
   )
 })
 

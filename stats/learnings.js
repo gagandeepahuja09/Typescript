@@ -31,9 +31,22 @@
 // So we will abstract that logic out.
 
 // 3. Data array is all strings, even though it might have numbers in it.
+// type assertion --> creating a tuple
 
 // 4. Variable named after a specific team.
 
 // 5. Analysis type is fixed.
 
 // 6. No ability to output the report in different formats.
+
+
+// csvFileReader should not have logic related to conversion for creating 
+// match data
+// csvFileReader(abstract class) == read(), mapRow() --> abstract method
+// matchReader ==> mapRow(string[]): matchData
+// movieReader ==> mapRow(string[]): movieData
+
+// we will use generics in csvFileReader
+// because mapRow can return type depending on the child class
+// generics are just like parameters for classes
+// abstract mapRow(row: string[]): T;

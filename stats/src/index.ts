@@ -1,10 +1,9 @@
 // we will need to install type definition file for standard node packages as well
 // npm i @types/node
-import fs from 'fs'
-import { CsvFileReader } from './CsvFileReader'
+import { MatchReader } from './MatchReader'
 import { MatchResult } from './MatchResult'
 
-const reader = new CsvFileReader('football.csv')
+const reader = new MatchReader('football.csv')
 reader.read()
 
 let manUnitedWins = 0

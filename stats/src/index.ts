@@ -2,6 +2,7 @@
 // npm i @types/node
 import fs from 'fs'
 import { CsvFileReader } from './CsvFileReader'
+import { MatchResult } from './MatchResult'
 
 const reader = new CsvFileReader('football.csv')
 reader.read()
@@ -13,11 +14,6 @@ let manUnitedWins = 0
 // we can return a MatchResult & use in TS
 // behind the scenes, an object is created
 // Primary goal is to signal other engineers that these are all closely related values
-enum MatchResult {
-  HomeWin = 'H',
-  AwayWin = 'A',
-  Draw = 'D'
-}
 
 reader.data.forEach(match => {
   manUnitedWins += +(

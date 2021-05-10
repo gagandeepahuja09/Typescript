@@ -50,3 +50,11 @@
 // because mapRow can return type depending on the child class
 // generics are just like parameters for classes
 // abstract mapRow(row: string[]): T;
+
+// This was inheritance approach
+// Now we will discuss the alternative approach: Composition
+// Relies on interfaces
+// Earlier MatchReader was a child class of CsvFileReader
+// Now MatchReader would have a reader property which would specify which kind of
+// DataReader we want to use(eg. CsvFileReader / ApiReader, etc)
+// DataReader will be an interface ==> read(): void, data: string[][]

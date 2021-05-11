@@ -64,3 +64,25 @@
 // Inheritance V/S Composition
 // Inheritance uses ==> is-a relationship ==> MatchReader is a CsvFileReader
 // Composition uses ==> has-a relationship ==> MatchReader has a reference to CsvFileReader
+
+// When should we use composition?
+// When we are not sure of what the parent class is going to be
+// Then the reference can be stored in composition and responsibility can be given
+// to the referenced class
+
+// EXAMPLE
+// How to model a window?
+// height, width, open --> (boolean), toggleOpen(), area()
+// Wall ==> height, width, color, area()
+// For reusability we can create a parent class called Rectangle
+// But the problem is that a window could be circle also.
+// Then we would have to create 2 classes ==> Duplicate code for open and toggleOpen
+
+// Composition Way
+// Interface Dimension ==> Must have area function
+// Both classes Wall & Window will have a dimension property specifying 
+// whether a Rectangle or Window
+// And the area functionality will be delegated to that dimension
+
+// So for MatchReader also, a better approach would be to use composition
+// as we can easily swap out and use ApiReader as dataReader for MatchReader later without doing much code changes.

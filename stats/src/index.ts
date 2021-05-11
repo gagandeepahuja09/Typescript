@@ -1,10 +1,12 @@
 // we will need to install type definition file for standard node packages as well
 // npm i @types/node
+import { CsvFileReader } from './CsvFileReader'
 import { MatchReader } from './MatchReader'
 import { MatchResult } from './MatchResult'
 
-const reader = new MatchReader('football.csv')
-reader.read()
+const csvFileReader = new CsvFileReader('football.csv')
+const matchReader = new MatchReader(csvFileReader)
+matchReader.load()
 
 let manUnitedWins = 0
 
@@ -14,7 +16,7 @@ let manUnitedWins = 0
 // behind the scenes, an object is created
 // Primary goal is to signal other engineers that these are all closely related values
 
-reader.data.forEach(match => {
+matchReader.matches.forEach(match => {
   manUnitedWins += +(
     (match[1] === 'Man United' && match[5] === MatchResult.HomeWin)
     || (match[2] === 'Man United' && match[5] === MatchResult.AwayWin)

@@ -58,3 +58,9 @@
 // Now MatchReader would have a reader property which would specify which kind of
 // DataReader we want to use(eg. CsvFileReader / ApiReader, etc)
 // DataReader will be an interface ==> read(): void, data: string[][]
+// In composition approach, we delegated the responsibility of reading to the 
+// dataReader
+
+// Inheritance V/S Composition
+// Inheritance uses ==> is-a relationship ==> MatchReader is a CsvFileReader
+// Composition uses ==> has-a relationship ==> MatchReader has a reference to CsvFileReader

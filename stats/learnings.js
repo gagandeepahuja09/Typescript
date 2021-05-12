@@ -86,3 +86,18 @@
 
 // So for MatchReader also, a better approach would be to use composition
 // as we can easily swap out and use ApiReader as dataReader for MatchReader later without doing much code changes.
+
+
+// **** DESIGN FOR ANALYSIS AND REPORTING ****
+// interface Analyzer
+// run(matches: MatchData[]): string
+
+// classes which implement Analyzer ==> AverageGoalWinsAnalysis, WinsAnalysis
+
+// interface OutputTarget ==> print(report: string): void
+// classes which implement OutputTarget ==> ConsoleReport, HtmlReport
+
+// class MatchSummary
+// analyzer: Analyzer
+// outputTarget: OutputTarget
+// buildAndPrintReport(MatchData[])

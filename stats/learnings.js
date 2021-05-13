@@ -85,7 +85,7 @@
 // And the area functionality will be delegated to that dimension
 
 // So for MatchReader also, a better approach would be to use composition
-// as we can easily swap out and use ApiReader as dataReader for MatchReader later without doing much code changes.
+// as we can easily swap out and use instance of ApiReader as dataReader for MatchReader later without doing much code changes.
 
 
 // **** DESIGN FOR ANALYSIS AND REPORTING ****
@@ -100,4 +100,5 @@
 // class MatchSummary
 // analyzer: Analyzer
 // outputTarget: OutputTarget
+// We are going to pass here instances of analyzer and outputTarget
 // buildAndPrintReport(MatchData[])

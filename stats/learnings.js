@@ -102,3 +102,5 @@
 // outputTarget: OutputTarget
 // We are going to pass here instances of analyzer and outputTarget
 // buildAndPrintReport(MatchData[])
+
+// While implementing classes of an interface, import the interface and use the implements keyword

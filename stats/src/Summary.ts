@@ -1,10 +1,10 @@
 import { MatchData } from './MatchData';
 
-interface Analyzer {
+export interface Analyzer {
   run(matches: MatchData[]): string
 }
 
-interface OutputTarget {
+export interface OutputTarget {
   print(report: string): void
 }
 

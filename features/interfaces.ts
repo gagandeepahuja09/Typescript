@@ -25,7 +25,7 @@ const myDrink = {
   }
 }
 
-// myDrink and oldCivic are very different things but both have a type summary
+// myDrink and oldCivic are very different things but both have a summary function
 // hence are of type reportable
 // We can use a single interface to describe the shape of very different objects
 // So, we made a very generic looking interface with a very generic name print summary

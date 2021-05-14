@@ -16,6 +16,13 @@
 //   "start": "concurrently npm:start:*"
 // }
 
+// Enums
+// we could also use object, but they are not meant for that purpose
+// they are meant for storing records. + enums can be used as a type in typescript
+// we can return a MatchResult & use in TS
+// behind the scenes, an object is created
+// Primary goal is to signal other engineers that these are all closely related values
+
 
 // Issues with the earlier approach
 // 1. Magic string comparisons like === 'A', 'H', 'D'. No one is aware

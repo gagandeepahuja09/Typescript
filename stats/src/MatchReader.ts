@@ -26,4 +26,8 @@ export class MatchReader {
       ]
     })
   }
+
+  static readCsv(fileName: string): MatchReader {
+    return new MatchReader(new CsvFileReader(fileName))
+  }
 }

@@ -16,6 +16,9 @@
 //   "start": "concurrently npm:start:*"
 // }
 
+// we will need to install type definition file for standard node packages as well
+// npm i @types/node
+
 // Enums
 // we could also use object, but they are not meant for that purpose
 // they are meant for storing records. + enums can be used as a type in typescript
@@ -112,3 +115,12 @@
 
 // While implementing classes of an interface, import the interface and use the implements keyword
 // Completed this composition flow
+
+// One improvisation
+// const matchSummary = new Summary(
+// new WinsAnalysis('Man United'),
+// new HtmlReport('report.html')
+// )
+// This is kind of verbose. What if we want to use winsAnalysis and Html Report Together A lot?
+// We could create a static function that does just that. In the static function, we
+// could create a new instance with WinsAnalysis and HtmlReport preconfigured.

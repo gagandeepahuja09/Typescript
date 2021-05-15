@@ -26,6 +26,7 @@
 // on(eventName: string, callback: () => {})
   // Registers an event handler with this object, so that other parts of the app
   // know when something changes
+  // Very similar to addEventListener is JS
 // trigger(eventName: string): void
   // Triggers an event to tell other parts of the app that something has changed.
 // fetch(): Promise
@@ -43,3 +44,12 @@
 // from source(updatedData) to target(this.data)
 // But there is already a function in JS that does just that
 // It's a static function ==> Object.assign(target, source)
+
+
+// Storing event listeners
+// We need to store for each eventName, what all callbacks we need to call
+// While that event is triggered.
+// We are going to create a type alias for CallBack
+// Type for it:
+// { [key: string]: CallBack[] }
+// Because we don't currently know what all keys it is going to have.

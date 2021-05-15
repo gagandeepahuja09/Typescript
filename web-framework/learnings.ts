@@ -36,3 +36,10 @@
 // Interfaces have both purposes
   // Create a new type
   // Get code reuse with implements and other features.
+
+
+// set function in User
+// We have to iterate through all object entries and assign all those properties
+// from source(updatedData) to target(this.data)
+// But there is already a function in JS that does just that
+// It's a static function ==> Object.assign(target, source)

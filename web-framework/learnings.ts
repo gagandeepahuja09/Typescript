@@ -18,3 +18,21 @@
 // 1. Ability to store data, retrieve it and change it.
 // 2. Ability to notify rest of the app when some data is changed.
 // 3. Persist data on some outside server and then retrieve it at some future point.
+
+// class User
+// private data: UserProps
+// get(propName: string): (string | number)
+// set(update: UserProps): void
+// on(eventName: string, callback: () => {})
+  // Registers an event handler with this object, so that other parts of the app
+  // know when something changes
+// trigger(eventName: string): void
+  // Triggers an event to tell other parts of the app that something has changed.
+// fetch(): Promise
+  // Fetches some data from the server about a particular user.
+// save(): Promise
+  // Save some data about this user to the server.
+
+// Interfaces have both purposes
+  // Create a new type
+  // Get code reuse with implements and other features.

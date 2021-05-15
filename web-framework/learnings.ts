@@ -53,3 +53,8 @@
 // Type for it:
 // { [key: string]: CallBack[] }
 // Because we don't currently know what all keys it is going to have.
+
+// type CallBack = () => {}
+// In this TS is going to assume that it's a function returning an object
+// Rather it should be a fn returning nothing.
+// type CallBack = () => void

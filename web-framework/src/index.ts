@@ -2,11 +2,11 @@ import { User } from './models/User'
 
 const myUser = new User({})
 
-myUser.events.on('click', () => {
-  console.log('clicked!!!')
-})
+// myUser.events.on('click', () => {
+//   console.log('clicked!!!')
+// })
 
-myUser.events.trigger('click')
+// myUser.events.trigger('click')
 
 // myUser.fetch()
 

@@ -94,3 +94,7 @@
 
 // One downside of composition here is that we cannot directly call user.on 
 // and user.trigger, rather use user.events.on and user.events.trigger 
+
+// Extraction of Sync class is tricky here. There is circular dependency
+// as Sync requires get and set which are a part of User class
+// while User requires fetch and save present in the Fetch class.

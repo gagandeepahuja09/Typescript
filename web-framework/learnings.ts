@@ -66,3 +66,10 @@
 
 // No id ==> Brand new User ==> POST
 // id ==> PUT
+
+// Currently User class has 3 different kinds of functions:
+// Eventing: on, trigger
+// Preserve to Server & Fetching from Server: save, fetch
+// Modelling: getters and setters
+
+// Since these aren't inter-related we should have separate classes for them.

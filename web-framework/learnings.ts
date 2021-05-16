@@ -108,6 +108,11 @@
 // class Sync<T>
 // save(id: number, data: T): AxiosPromise<T>
 // fetch(id: number): AxiosPromise<T>
+// Why is it important to return promise?
+// For save it's important to know if the data was properly saved or not from
+// the response.
+// In case of fetch, after fetching we now don't want to set the property as that is
+// specific to the user class, so we will remove the 
 
 // class User
 // sync: Sync<UserProps>

@@ -98,3 +98,16 @@
 // Extraction of Sync class is tricky here. There is circular dependency
 // as Sync requires get and set which are a part of User class
 // while User requires fetch and save present in the Fetch class.
+// Approaches to remove this circular dependency:
+// 1) Have parameters save(id, data: UserProps)
+  // this will limit it to only users
+// 2) Serialize and Deserializing and using that as type ==> Still limited
+// 3) Best solution: Sync is a generic class to customize the type of 'data'
+// coming into save. Can be easily used in other classes.
+
+// class Sync<T>
+// save(id: number, data: T): AxiosPromise<T>
+// fetch(id: number): AxiosPromise<T>
+
+// class User
+// sync: Sync<UserProps>

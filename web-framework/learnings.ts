@@ -73,3 +73,24 @@
 // Modelling: getters and setters
 
 // Since these aren't inter-related we should have separate classes for them.
+// Making use of composition
+// class User
+// attributes: Attributes
+// events: Eventing
+// sync: Sync
+
+// There are three approaches for integrating events instance in 
+// User class from Eventing class using composition
+// Approach 1: Add another argument in the constructor of User
+  // Con: A little bit verbose
+
+// Approach 2: Similar to static methods, create a static method in which 
+// we only need to pass the data 
+// property and events would be created and added in the static method.
+
+// Approach 3: Hardcode events as new Eventing() in the User class
+// Since we don't expect the events class to change in the future, 
+// this is the best possible soln currently.
+
+// One downside of composition here is that we cannot directly call user.on 
+// and user.trigger, rather use user.events.on and user.events.trigger 

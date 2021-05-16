@@ -1,8 +1,14 @@
 import { User } from './models/User'
 
-const myUser = new User({ id: 1 })
+const myUser = new User({})
 
-myUser.fetch()
+myUser.events.on('click', () => {
+  console.log('clicked!!!')
+})
+
+myUser.events.trigger('click')
+
+// myUser.fetch()
 
 // // Since fetch is async, we waited for some time for testing
 // setTimeout(() => {

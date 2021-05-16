@@ -58,3 +58,11 @@
 // In this TS is going to assume that it's a function returning an object
 // Rather it should be a fn returning nothing.
 // type CallBack = () => void
+
+// Checking if data is persisted in DB
+// Check if id property is there or not
+// id ==> Persisted in DB
+// no id ==> Not persisted in DB
+
+// No id ==> Brand new User ==> POST
+// id ==> PUT

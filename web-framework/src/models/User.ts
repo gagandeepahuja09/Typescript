@@ -1,8 +1,12 @@
+import axios, { AxiosResponse } from 'axios'
 interface UserProps {
   // optional interface properties
   name?: string
   age?: number
+  id?: number
 }
+
+const SERVER_BASE_URL = 'http://localhost:3000'
 
 type CallBack = () => void
 
@@ -29,5 +33,25 @@ export class User {
     handlers.forEach(callback => {
       callback()
     })
+  }
+
+  fetch(): void {
+    axios
+      .get(`${SERVER_BASE_URL}/users/${this.data.id}`)
+      .then((response: AxiosResponse): void => {
+        this.set(response.data)
+      })
+  }
+
+  save(): void {
+    const { id } = this.data
+    if (id) {
+      console.log('HERE111')
+      axios
+      .put(`${SERVER_BASE_URL}/users/${id}`, this.data)
+    } else {
+      axios
+      .post(`${SERVER_BASE_URL}/users`, this.data)
+    }
   }
 }

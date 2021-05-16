@@ -1,8 +1,12 @@
 import { User } from './models/User'
 
-const user = new User({ name: 'myName', age: 22 })
+const myUser = new User({ id: 1 })
 
-user.set({ name: 'newName' })
+myUser.fetch()
 
-console.log(user.get('age'))
-console.log(user.get('name'))
+// Since fetch is async, we waited for some time for testing
+setTimeout(() => {
+  console.log('YO', myUser.get('age'))
+  myUser.set({ name: 'NEW NAME' })
+  myUser.save()
+}, 4000)

@@ -144,3 +144,8 @@
 
 // We will delete the tsconfig file for now, because it's going us a lot of warnings
 // Which aren't really needed.
+
+// Moving Attributes class
+// data property is of generic type
+// Issue with get: Since we want it to be reusable across different classes,
+// we cannot use (string | number) as the return type.

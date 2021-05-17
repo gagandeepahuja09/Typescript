@@ -114,5 +114,33 @@
 // In case of fetch, after fetching we now don't want to set the property as that is
 // specific to the user class, so we will remove the 
 
+// sync class refactoring to remove user dependent 
+// code(adding arguments in fetch and save), 
+// passing user arguments and adding rootUrl property
+
 // class User
 // sync: Sync<UserProps>
+
+// For connecting user to sync there are again those 3 options
+// Here in this case, it is much more likely that we could be changing Sync class
+// if requirements change, eg. now we want to save to our local machine / to a DB
+// but we are still going to choose the hard-coding way.
+
+// sync: Sync<UserProps> = new Sync<UserProps>(rootUrl)
+// While creating this, we get an error that id is required in hasId but optional
+// in userProps
+// So we mark id as optional in hasId
+
+
+// CASE to be handle while Using OPTIONAL PROPERTIES
+// If we hover over id here in Sync.ts ===> const { id } = data
+// we see that id is assigned a type of number by TS
+// this is not totally correct as an optional property could have type of undefined also
+// So here type should be number | undefined
+// How to correct? TS has one config flag "strict" set to false by default
+// But if initialize the tsconfig.json file(tsc --init), we get the flag to true
+// This has enabled stricter type checking
+// "strictNullChecks": true 
+
+// We will delete the tsconfig file for now, because it's going us a lot of warnings
+// Which aren't really needed.

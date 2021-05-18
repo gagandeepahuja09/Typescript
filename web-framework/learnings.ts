@@ -149,3 +149,20 @@
 // data property is of generic type
 // Issue with get: Since we want it to be reusable across different classes,
 // we cannot use (string | number) as the return type.
+
+
+
+// The Get Method's Shortcoming
+// Let's take an example
+// const attrs = new Attributes<UserProps>({
+//   id: 1,
+//   name: 'a',
+//   age: 22
+// })
+// const id = attrs.get('id')
+// If we hover over id, then TS will show it's type as 
+// number | string | boolean, since this is what the type we are returning in get
+// This would result in only the common functions being available
+// Ideally we would want the TS checks the type returned by get and then assigns
+// id variable a type of number
+

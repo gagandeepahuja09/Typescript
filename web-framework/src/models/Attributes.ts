@@ -1,6 +1,6 @@
 export class Attributes<T> {
   constructor(private data: T) {}
-  get(propName: string): (string | number) {
+  get(propName: string): string | number | boolean {
     return this.data[propName]
   }
 

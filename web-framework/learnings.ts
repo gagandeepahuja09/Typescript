@@ -165,4 +165,26 @@
 // This would result in only the common functions being available
 // Ideally we would want the TS checks the type returned by get and then assigns
 // id variable a type of number
+// We would write a generics solution to solve this problem.
 
+// if (typeof )
+// typeof acts as type guard
+
+// Two Important Rules:
+// 1. In JS(& therefore TS) all object keys are string ==> Obvious
+// 2. In TS strings can be types
+// type MyNameType = 'gagan'
+// This creates a new type which will only satisfy if string is 'gagan'
+// From points 1 & 2 we can infer that we can create object keys as types. 
+
+
+// Solving Get Method's shortcoming using generics
+// class Attributes<T>
+// T is going to be an object like UserProps
+// get<K extends keyof T>(key: K): T[K]
+// This means that K will be one of the keys present in T
+// Hence the return type will be T[K] 
+
+// const name = attrs.get('name') we get correct type using inference
+//const names = attrs.get('names') now after generic constraint we can only
+//  assign the 3 types which are keys, hence the error

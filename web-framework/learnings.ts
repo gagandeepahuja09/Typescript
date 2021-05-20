@@ -188,3 +188,9 @@
 // const name = attrs.get('name') we get correct type using inference
 //const names = attrs.get('names') now after generic constraint we can only
 //  assign the 3 types which are keys, hence the error
+
+
+// Re-integrating Attributes
+// We will try to follow a similar inline styles approach
+// But we can see that this class requires passing in the data. Hence we need to 
+// create this in the User constructor.

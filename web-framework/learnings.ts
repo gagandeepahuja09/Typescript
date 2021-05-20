@@ -194,3 +194,16 @@
 // We will try to follow a similar inline styles approach
 // But we can see that this class requires passing in the data. Hence we need to 
 // create this in the User constructor.
+
+
+// COMPOSITION IS DELEGATION
+// Caller === User === Composition Classes of User
+// Let's say we wanna implement save
+// With the new approach, we cannot do save directly ==> user.save()
+// Now we need the data. How will we get it? We need to get through all
+// properties
+// This example shows that composition is delegation
+// Rather than direct pass through of the caller to the composition classes
+// It should go to the user class function and the user class will delegate it
+// to the composition classes.
+// Now we will complete those functions, which the user class had access to earlier.

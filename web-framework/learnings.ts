@@ -207,3 +207,24 @@
 // It should go to the user class function and the user class will delegate it
 // to the composition classes.
 // Now we will complete those functions, which the user class had access to earlier.
+
+
+// Reminder On Accessors
+// Here there will be 2 kinds of fns. In one, there will be direct passthrough
+// to a class. Others will require interaction of one / more class
+// Direct passthrough ==> get, on, trigger
+// To use something as getter / accessor ==> add get at the start
+
+
+// Passthrough Methods
+// On method
+// Approach 1:
+// on(eventName: string, callback: CallBack): void {
+//   this.events.on(eventName, callback)
+// }
+// Problem with this approach: Anytime we change the on implementation in the Eventing class, we 
+// would have to change here too
+
+// Approach 2: We will create a getter and return the reference to the function of event
+// Now when we do user.on ==> we get the reference. We can now call this using
+// user.on('a', () => {})

@@ -263,3 +263,10 @@
 // In Model class, we will keep interfaces for the 3 classes: Events, Sync and 
 // Attributes as a different class might wanna implement a different way of using
 // these. Eg. Images class might wanna sync from local storage.
+
+
+
+// Extending the User
+// const id = this.get('id')
+// Problem: Here T is a generic type and not all types have property P
+// So, for this we will create a new type HasId and T will extend that.

@@ -239,3 +239,9 @@
 // to the object where it is residing.
 // Hence by using arrows functions, normal functions turn into bound functions.
 // We are going to do the same for on, trigger.
+
+
+// Setting data while Triggering
+// We are going to add a new requirement to the set function
+// whenever we set any data, we are going to trigger the change event
+// so that other parts of the appln are informed about this.

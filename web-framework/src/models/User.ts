@@ -31,18 +31,13 @@ export class User {
   get get() {
     return this.attributes.get
   }
+
+  set(update: UserProps): void {
+    this.attributes.set(update)
+    this.events.trigger('change')
+  }
 }
 
 const user = new User({
   name: 'Hello'
 })
-
-console.log(user.get('name'))
-
-
-user.on('click', () => {
-  console.log('clicked')
-})
-
-user.trigger('click')
-user.trigger('click')

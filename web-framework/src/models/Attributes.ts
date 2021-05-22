@@ -7,4 +7,8 @@ export class Attributes<T> {
   set(updatedData: T): void {
     Object.assign(this.data, updatedData)
   }
+
+  getAll = (): T => {
+    return this.data
+  }
 }

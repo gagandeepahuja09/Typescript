@@ -1,6 +1,7 @@
 import { Eventing } from './Eventing'
 import { Sync } from './Sync'
 import { Attributes } from './Attributes'
+import { AxiosResponse } from 'axios'
 
 export interface UserProps {
   // optional interface properties
@@ -36,8 +37,16 @@ export class User {
     this.attributes.set(update)
     this.events.trigger('change')
   }
-}
 
-const user = new User({
-  name: 'Hello'
-})
+  fetch(): void {
+    const id = this.get('id')
+
+    if (typeof id !== 'number') {
+      throw new Error('An argument of type number is expected')
+    }
+
+    this.sync.fetch(id).then((response: AxiosResponse) => {
+      this.set(response.data)
+    })
+  }
+}

@@ -1,6 +1,14 @@
 import { User } from './models/User'
 
-const myUser = new User({})
+const myUser = new User({
+  id: 1
+})
+
+myUser.on('change', () => {
+  console.log('Lets change html')
+})
+
+myUser.fetch()
 
 // myUser.events.on('click', () => {
 //   console.log('clicked!!!')

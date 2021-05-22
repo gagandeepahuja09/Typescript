@@ -228,3 +228,14 @@
 // Approach 2: We will create a getter and return the reference to the function of event
 // Now when we do user.on ==> we get the reference. We can now call this using
 // user.on('a', () => {})
+// This simplifies it a lot :)
+
+
+// A Context Issue: user.get is failing
+// Remember how this works in Javascript: this always point to the object calling the function.
+// Not true for Arrow functions
+// user.get('name') ==> will try to access user.data.name ==> Since data is undefined.
+// Solution to this problem ==> Use arrow functions ==> For arrow functions, this always points
+// to the object where it is residing.
+// Hence by using arrows functions, normal functions turn into bound functions.
+// We are going to do the same for on, trigger.

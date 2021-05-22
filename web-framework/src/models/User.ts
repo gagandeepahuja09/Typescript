@@ -23,4 +23,26 @@ export class User {
   get on() {
     return this.events.on
   }
+
+  get trigger() {
+    return this.events.trigger
+  }
+
+  get get() {
+    return this.attributes.get
+  }
 }
+
+const user = new User({
+  name: 'Hello'
+})
+
+console.log(user.get('name'))
+
+
+user.on('click', () => {
+  console.log('clicked')
+})
+
+user.trigger('click')
+user.trigger('click')

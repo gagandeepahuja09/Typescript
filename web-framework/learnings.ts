@@ -245,3 +245,21 @@
 // We are going to add a new requirement to the set function
 // whenever we set any data, we are going to trigger the change event
 // so that other parts of the appln are informed about this.
+
+
+// Composition Vs Inheritance Again
+// Issues with the current code:
+// 1) The nested objects are all public --> Should be private
+// 2) The nested object are all hardcode + Don't use interfaces
+// 3) We don't want to have to create all these methods for each new model we create.
+// For problem 3 ==> User class => 
+// model: Model 
+// Composition approach ==> We don't want to be doing user.model.get() etc everytime
+// also we don't want to be creating their passthroughs
+// Since the parent class won't change in this class, we can use Inheritance here.
+
+
+// Extracting A Model Class
+// In Model class, we will keep interfaces for the 3 classes: Events, Sync and 
+// Attributes as a different class might wanna implement a different way of using
+// these. Eg. Images class might wanna sync from local storage.

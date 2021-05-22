@@ -270,3 +270,9 @@
 // const id = this.get('id')
 // Problem: Here T is a generic type and not all types have property P
 // So, for this we will create a new type HasId and T will extend that.
+
+
+// Final User Refactor
+// After adding the model class, we can see that it's better if we create
+// a static class for user to preconfigure all the 3 objects that would 
+// be needed.

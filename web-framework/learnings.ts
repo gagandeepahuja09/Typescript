@@ -276,3 +276,10 @@
 // After adding the model class, we can see that it's better if we create
 // a static class for user to preconfigure all the 3 objects that would 
 // be needed.
+
+
+// Shortened Passthrough Methods
+// Rather than using get method we create variables
+// Since we initialize it with constructors, make sure that you initialize in 
+// the correct order
+// Eg. events should be initialized before initializing the "on" variable.

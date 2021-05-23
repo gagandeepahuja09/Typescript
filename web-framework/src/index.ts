@@ -1,11 +1,9 @@
 import { User } from './models/User'
 
-const myUser = new User({
-  id: 1
-})
+const myUser = User.buildUser({ id: 1 })
 
 myUser.on('change', () => {
-  console.log('Lets change html')
+  console.log('Lets change html', myUser)
 })
 
 myUser.fetch()

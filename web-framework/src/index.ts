@@ -1,12 +1,12 @@
-import { User } from './models/User'
+import { Collection } from './models/Collection'
 
-const myUser = User.buildUser({ id: 1 })
+const userCollection = new Collection('http://localhost:3000/users')
 
-myUser.on('change', () => {
-  console.log('Lets change html', myUser)
+userCollection.on('change', () => {
+  console.log('Lets change html', userCollection)
 })
 
-myUser.fetch()
+userCollection.fetch()
 
 // myUser.events.on('click', () => {
 //   console.log('clicked!!!')

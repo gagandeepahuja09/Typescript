@@ -277,9 +277,24 @@
 // a static class for user to preconfigure all the 3 objects that would 
 // be needed.
 
-
 // Shortened Passthrough Methods
 // Rather than using get method we create variables
 // Since we initialize it with constructors, make sure that you initialize in 
 // the correct order
 // Eg. events should be initialized before initializing the "on" variable.
+
+
+// Users Collection
+// Right now we only have a fetch for a specific id
+// But when we start up the application, we are not aware of the list of users.
+// First we will start with UsersCollection and then try and make it reusable
+// a convert to class Collection
+// UserCollection ===> models: User[], events: Eventing, fetch()
+// Collection<T> ===> models: T[], events, fetch()
+
+// Implementing A Users Collection
+// Note: Here we need to create getters for on & trigger. This is because models
+// are created inline. Hence if we use normal variables
+// this.on = this.events.on will be before this.events = new Eventing()
+// if we had them in the constructor like the earlier example, we could 
+// have used the variable syntax.

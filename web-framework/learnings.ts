@@ -298,3 +298,27 @@
 // this.on = this.events.on will be before this.events = new Eventing()
 // if we had them in the constructor like the earlier example, we could 
 // have used the variable syntax.
+
+
+
+
+// VIEW CLASSES
+// We wanna have a functionality similar to react classes
+// Examples: UserShow, UserForm, UserEdit. We should be able to nest UserShow
+// and UserForm inside UserEdit
+// 1) Each view must produce HTML
+// 2) You should be able to nest one view's HTML into another.
+// 3) There will probably be a tight coupling between a view and a model.
+// 4) We need to be able to reach into the HTML produced by a view and
+// get a specific element.
+// Plan: Build UserForm & extract reusable logic from it, for building 
+// UserEdit and UserShow.
+
+
+
+// Building The UserForm
+// UserForm class ==> parent: Element, template(): string, render(): void
+// render method gets the template and inserts it into the DOM
+// It is just going to append in the parent element as a child.
+// parent: Element There are a lot of built-in interfaces like Element, HTMLElement,... etc 
+// available through the window in TS.

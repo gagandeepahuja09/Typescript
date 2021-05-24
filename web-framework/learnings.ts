@@ -322,3 +322,10 @@
 // It is just going to append in the parent element as a child.
 // parent: Element There are a lot of built-in interfaces like Element, HTMLElement,... etc 
 // available through the window in TS.
+
+
+
+// The UserForm's render method
+// Create a new element
+// Assign the inner html
+// Append to the parent element

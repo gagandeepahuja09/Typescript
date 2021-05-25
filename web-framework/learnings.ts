@@ -332,3 +332,4 @@
 // We should be able to bind event handlers to the HTML elements.
 
 // Adding Model Properties to the UserForm
+// In the next step we will bind events to change the user data

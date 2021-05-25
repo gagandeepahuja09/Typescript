@@ -330,3 +330,5 @@
 
 // Defining An Events Map
 // We should be able to bind event handlers to the HTML elements.
+
+// Adding Model Properties to the UserForm

@@ -1,25 +1,9 @@
-import { Collection } from './models/Collection'
-import { User, UserProps } from './models/User'
+import { UserForm } from './views/UserForm'
 
-const userCollection = User.buildUserCollection()
+const rootEle = document.getElementById('root')
 
-userCollection.on('change', () => {
-  console.log('Lets change html', userCollection)
-})
+const userFormEle = new UserForm(rootEle)
 
-userCollection.fetch()
-
-// myUser.events.on('click', () => {
-//   console.log('clicked!!!')
-// })
-
-// myUser.events.trigger('click')
-
-// myUser.fetch()
-
-// // Since fetch is async, we waited for some time for testing
-// setTimeout(() => {
-//   console.log('YO', myUser.get('age'))
-//   myUser.set({ name: 'NEW NAME' })
-//   myUser.save()
-// }, 4000)
+for (let i = 0; i < 10; i++) {
+  userFormEle.render()
+}

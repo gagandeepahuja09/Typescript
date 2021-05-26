@@ -333,3 +333,7 @@
 
 // Adding Model Properties to the UserForm
 // In the next step we will bind events to change the user data
+
+// Re-rendering On Model Change
+// 'change' event is triggered whenever we set a property.
+// hence we will listen to it using on & re-render the dom.

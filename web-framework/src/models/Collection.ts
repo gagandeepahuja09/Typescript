@@ -1,7 +1,7 @@
 import { Eventing } from './Eventing'
 import axios, { AxiosResponse } from 'axios'
 export class Collection<T, K> {
-  models: T[]
+  models: T[] = []
   events: Eventing = new Eventing()
 
   constructor(

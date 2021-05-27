@@ -337,3 +337,27 @@
 // Re-rendering On Model Change
 // 'change' event is triggered whenever we set a property.
 // hence we will listen to it using on & re-render the dom.
+
+// Strict Null Checks
+// By default the strict null checks are not handled by TS. 
+// Ex: document.querySelector ==> could give Element or null.
+// Hence to handle that, we have to add the ts config file(& change the flag)
+// "strictNullChecks": true 
+
+// Reusable View Logic
+// We have 2 options of composition & inheritance
+// Segregation:
+// View: parent: Element, model: User(Generics to be used),render(): void, 
+// bindEvents(): void, bindModel(): void 
+
+// UserForm: 
+// template(): string, eventsMap(), onSetNameClick, onSetAgeClick
+
+// render(V) ---> template(U)
+// bindEvents(V) ---> eventsMap(U)
+// onSetNameClick, onSetAgeClick(U) --> parent(V)
+// whenever we have such kind of bidirectional relationship, then using composition is not ideal
+// Also we know that a UserForm is a View
+// Hence using Inheritance with Abstract classes would be a better option
+// template() and bindEvents() would be abstract functions as they won't have any implementation for
+// View class and the child class needs to implement these.

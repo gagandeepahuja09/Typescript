@@ -344,6 +344,8 @@
 // Hence to handle that, we have to add the ts config file(& change the flag)
 // "strictNullChecks": true 
 
+
+
 // Reusable View Logic
 // We have 2 options of composition & inheritance
 // Segregation:
@@ -361,3 +363,19 @@
 // Hence using Inheritance with Abstract classes would be a better option
 // template() and bindEvents() would be abstract functions as they won't have any implementation for
 // View class and the child class needs to implement these.
+
+
+
+// Extending With Generic Constraints
+// public model: User ===> model: T
+// We would need to specify the generic for View
+// View<T>, model: T.
+// Now it show that the property "on" need not exist on type T.
+// We need to specify the type of model for the view.
+// We can do this by extending the Model class as a type. T extends Model
+// But model also has a generic constraint example Model<UserProps>
+// but we can't hardcode UserProps here since this can have any type
+// so for this, we also pass in a 2nd type called K
+// View<T extends Model<K>, K>
+// Now in userForm we will specify the 2 generic types in UserForm class
+// View<User, UserForm>

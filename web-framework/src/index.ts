@@ -1,5 +1,5 @@
-import { UserForm } from './views/UserForm'
 import { User } from './models/User'
+import { UserEdit } from './views/UserEdit'
 
 const rootEle = document.getElementById('root')
 
@@ -8,6 +8,6 @@ const user = User.buildUser({
   age: 22
 })
 
-const userFormEle = rootEle ? new UserForm(rootEle, user) : null
+const userEditEle = rootEle ? new UserEdit(rootEle, user) : null
 
-userFormEle?.render()
+userEditEle?.render()

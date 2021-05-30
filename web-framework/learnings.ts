@@ -379,3 +379,21 @@
 // View<T extends Model<K>, K>
 // Now in userForm we will specify the 2 generic types in UserForm class
 // View<User, UserForm>
+
+
+// Nesting With regions
+// regionsMap() will return an obj that will specify the selector where a region is to
+// be placed.
+// regionsMap() ==> userShow --> .user-show
+// userForm --> .user-form
+// regions {
+// userShow: Element where this should be placed
+// userForm: Element where this should be placed
+// }
+// we will create a bindRegions method which will create the regions object
+// from regionsMap
+// this will be called in the render method
+
+// we will also have an onRender method which will be optional
+// this will be used to create instance of child class with their 
+// parent elements specified in the regions object. 

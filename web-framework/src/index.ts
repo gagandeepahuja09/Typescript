@@ -8,6 +8,6 @@ const user = User.buildUser({
   age: 22
 })
 
-const userFormEle = new UserForm(rootEle, user)
+const userFormEle = rootEle ? new UserForm(rootEle, user) : null
 
-userFormEle.render()
+userFormEle?.render()

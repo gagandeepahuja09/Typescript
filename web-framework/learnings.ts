@@ -397,3 +397,11 @@
 // we will also have an onRender method which will be optional
 // this will be used to create instance of child class with their 
 // parent elements specified in the regions object. 
+
+
+
+// Collection Views
+// abstract class CollectionView
+// collection: Collection
+// render(): void
+// abstract renderItem(model, itemParent): void
